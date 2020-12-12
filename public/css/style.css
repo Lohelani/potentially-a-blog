@@ -1,0 +1,47 @@
+body {
+    background-image: url("https://img.pngio.com/fully-simple-wrinkled-paper-background-paper-wrinkle-background-wrinkled-paper-png-640_856.png");
+}
+
+.navbar {
+    background-color: rgb(4, 4, 46);
+    padding: 10px;
+}
+
+i {
+    color: white;
+}
+
+hr {
+    color: white;
+}
+
+#searchBlogs {
+    width: 400px;
+}
+
+.musicContainer{
+    display: flex;
+    float: right;
+    background-color: rgb(4, 4, 46);
+    padding: 20px;
+    width: 400px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+header {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.containerBlog {
+    display: flex;
+    float: left;
+    background-color: rgb(72, 106, 63);
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 950px;
+}
