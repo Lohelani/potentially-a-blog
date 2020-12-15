@@ -8,6 +8,7 @@ $(document).ready(function () {
     var blogCategory = $("#category");
     //input value where user searches for a keyword of a blog if exists in database
     var searchBlogs = $("#searchBlogs");
+    //submit button to search
     var searchBtn = $("#searchblogsBtn");
     // dynamically creating click events for the edit and delete buttons
     $(document).on("click", "button.delete", handlePostDelete);
