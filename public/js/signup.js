@@ -38,4 +38,3 @@ $(document).ready(function() {
     $("#alert").fadaIn(500);
   }
 });
-
