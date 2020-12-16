@@ -1,0 +1,52 @@
+input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: gray;
+    background-color: aquamarine;
+    width: 46%;
+}
+input:focus {
+    border-color: blue
+} 
+
+#headMar {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+}
+
+#loginForm {
+    min-height: 300px;
+    width: 72vw;
+    background-color: aquamarine;
+}
+
+#usernameCon {
+    margin-top: 30px;
+}
+
+h1 {font-size:1.5rem;} /*1rem = 16px*/
+h2 {font-size:1rem;}
+
+@media (min-width: 544px) {  
+  h1 {font-size:1.75rem;} /*1rem = 16px*/
+  h2 {font-size: 1.125rem;}
+  #loginForm {
+    min-height: 56vh;
+    max-width: 62vw;                
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  h1 {font-size:2.25rem;} /*1rem = 16px*/
+  h2 {font-size:1.5rem}
+  #loginForm {min-height: 60vh;
+}
+
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  h1 {font-size:2.75rem;} /*1rem = 16px*/
+  h2 {font-size:1.875rem;}
+}
