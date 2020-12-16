@@ -14,8 +14,8 @@
 </head>
 <body class="aboutBody">
     
-     <!-- beginning of nav bar-->
-     <nav class="navbar navbar-expand-lg">
+    <!-- beginning of nav bar-->
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
@@ -36,16 +36,14 @@
                         </a>
                     </li>
                     <!--sign in / sign out options in nav-->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/login" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/login">Sign in</a></li>
-                            <li><a class="dropdown-item" href="/login">Sign out</a></li>
-                        </ul>
-                    </li>
+
+                    <div class="nav-item dropdown">
+                        <button onclick="myFunction()" class="nav-link dropbtn"><i class="fas fa-user"></i></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#">Sign in</a>
+                            <a href="#">Sign out</a>
+                        </div>
+                    </div>
                 </ul>
                 <!--search for blogs input in nav-->
                 <form class="d-flex">
@@ -85,7 +83,8 @@
 
 
 
-     <script src="js/signup.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
