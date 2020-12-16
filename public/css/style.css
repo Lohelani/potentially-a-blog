@@ -11,6 +11,11 @@
     background-image: url("https://fsb.zobj.net/crop.php?r=HQH6T-iYf3L6PmSuNQYhdczW34xXV1LpHYmHBPoNH8O5IMTOQWHx8bDQTSzpbKJtgsvgDpyXfjcdWkGU6T46cCwbGQZn0iONYZOcOSR62gZ1InmHfjFrvJzE_YkML-sUhgE9XqXEoJjEvGNT");
 }
 
+.createBody{
+    background-image: url("https://acupofcoffeeplease.com/wp-content/uploads/2019/10/diary-968603_1920.jpg");
+
+}
+
 .navbar {
     background-color: rgb(4, 4, 46);
     padding: 10px;
@@ -126,4 +131,39 @@ span {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: white;
+}
+
+.blogContainer {
+    display: block;
+    background-color: rgb(115, 145, 130);
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+textarea{
+    height: 200px;
+}
+
+#img{
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+#postBtn {
+    display: block;
+    float: right;
+    width: 200px;
+    font-family: 'Cabin', sans-serif;
+    background-color: rgb(6, 6, 61);
+}
+
+#postBtn:hover{
+    background-color: green;
 }
