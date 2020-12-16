@@ -1,10 +1,11 @@
-
+// Requiring necessary npm packages
 var express = require("express");
+var passport = require("./config/passport");
 
 //need to require it somewhere in the file for lint to read file
 //var mysql = require("mysql");
 
-var app = express();
+
 var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
@@ -15,7 +16,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
+var app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static("public"));
+
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 require("./routes/html-routes.js")(app);
