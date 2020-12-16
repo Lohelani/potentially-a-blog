@@ -150,10 +150,10 @@ textarea{
     height: 200px;
 }
 
-#img{
-    font-family: 'Cabin', sans-serif;
-    font-size: 20px;
-    color: black;
+.fa-image {
+    padding: 10px;
+    position: relative;
+    top: 4px;
 }
 
 #postBtn {
