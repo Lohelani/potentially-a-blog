@@ -9,7 +9,7 @@ module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
-      username: req.author.username,
+      email: req.author.email,
       id: req.author.id
     });
   });
@@ -19,7 +19,7 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     db.Author.create({
-      username: req.body.username,
+      email: req.body.email,
       password: req.body.password
     })
       .then(function() {
@@ -42,10 +42,10 @@ module.exports = function(app) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
-      // Otherwise send back the user's username and id
+      // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-        username: req.author.username,
+        email: req.author.email,
         id: req.author.id
       });
     }
