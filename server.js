@@ -2,6 +2,8 @@
 var express = require("express");
 var passport = require("./config/passport");
 
+var session = require("express-session");
+
 //need to require it somewhere in the file for lint to read file
 //var mysql = require("mysql");
 
@@ -12,8 +14,7 @@ var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 
 // Static directory
 var app = express();
@@ -25,6 +26,8 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // Routes
 require("./routes/html-routes.js")(app);
 require("./routes/blog-api-routes.js")(app);
