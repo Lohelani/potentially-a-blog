@@ -139,7 +139,7 @@ span {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 55px;
+    margin-top: 10px;
     height: 500px;
     padding: 20px;
     border-radius: 20px;
@@ -166,4 +166,14 @@ textarea{
 
 #postBtn:hover{
     background-color: green;
+}
+
+.helloContainer {
+    display: block;
+    margin-left: 125px;
+    font-family: 'Cabin', sans-serif;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 30px;
 }
