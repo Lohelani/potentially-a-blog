@@ -31,11 +31,11 @@ passport.use(
   )
 );
 
-passport.serializeAuthor(function(Author, cb) {
+passport.serializeUser(function(Author, cb) {
   cb(null, Author);
 });
 
-passport.deserializeAuthor(function(obj, cb){
+passport.deserializeUser(function(obj, cb){
   cb(null, obj);
 });
 
