@@ -3,6 +3,7 @@ var express = require("express");
 var passport = require("./config/passport");
 
 var session = require("express-session");
+var authRoutes = require("./routes/auth-routes.js");
 
 //need to require it somewhere in the file for lint to read file
 //var mysql = require("mysql");
@@ -25,6 +26,9 @@ app.use(express.static("public"));
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+//uses authRoutes
+app.use(authRoutes);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
