@@ -19,7 +19,8 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     db.Author.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      username: req.body.username
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -27,6 +28,17 @@ module.exports = function(app) {
       .catch(function(err){
         res.status(401).json(err);
       });
+  });
+
+  app.post("api/createblog", function(req, res) {
+    db.Post.create({
+      title: req.body.title,
+      body: req.body.body
+    }).then(function(){
+      res.redirect(307, "/").catch(function(err){
+        res.status(401).json(err);
+      });
+    });
   });
 
 
