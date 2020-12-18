@@ -13,6 +13,14 @@ module.exports = function(app) {
     //res.json(db.Author)
   });
 
+  app.post("/api/createblog", function(req,response) {
+    res.json(response);
+  }).then(function() {
+    res.redirect(307, "/api/viewblogs");
+  }).catch(function(err) {
+    res.status(401).json(err);
+  });
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -34,6 +42,10 @@ module.exports = function(app) {
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
+  });
+
+  app.get("/viewblogs", function(req,response) {
+    res.json(response);
   });
 
   // Route for getting some data about our user to be used client side
