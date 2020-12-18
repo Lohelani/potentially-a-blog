@@ -16,49 +16,51 @@
 
 <body class="signupBody">
 
-    <!-- beginning of nav bar-->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
-                    height="" class="d-inline-block align-top logo">
-            </a>
-            <!--home button in nav-->
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/viewblogs">
-                            <i class="fas fa-home"></i>
+        <!-- beginning of nav bar-->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
+                        height="" class="d-inline-block align-top logo">
+                </a>
+                <!--home button in nav-->
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/viewblogs">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <!--create button in nav-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/createblog">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </li>
+                        <!--sign in / sign out options in nav-->
+                        <li class="nav-item">
+                          <a class="nav-link" href="/login">
+                              Sign in
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Sign out
                         </a>
                     </li>
-                    <!--create button in nav-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/createblog">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                    </li>
-                    <!--sign in / sign out options in nav-->
-
-                    <div class="nav-item dropdown">
-                        <button onclick="myFunction()" class="nav-link dropbtn"><i class="fas fa-user"></i></button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="#">Sign in</a>
-                            <a href="#">Sign out</a>
-                        </div>
-                    </div>
-                </ul>
-                <!--search for blogs input in nav-->
-                <form class="d-flex">
-                    <input class="form-control me-2" id="searchBlogs" type="search"
-                        placeholder="Search Potentially a Blog" aria-label="Search">
-                    <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
+                    </ul>
+                    <!--search for blogs input in nav-->
+                    <form class="d-flex">
+                        <input class="form-control me-2" id="searchBlogs" type="search"
+                            placeholder="Search Potentially a Blog" aria-label="Search">
+                        <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- end of nav bar-->
+        </nav>
+        <!-- end of nav bar-->
 
      <div class="paginationContainer">
         <ul class="pagination">

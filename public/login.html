@@ -1,105 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Blog Login" content="Enter your description here"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Blog Login" content="Enter your description here" />
 
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-<link rel="stylesheet" href="css/login.css">
-
-<title>Login</title>
-
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>PaB/Login</title>
 </head>
 
 <body>
 
     <!-- beginning of nav bar-->
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid flex-row">
-          <a class="navbar-brand" href="#">
-              <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
-                  height="" class="d-inline-block align-top logo">
-          </a>
-          <!--home button in nav-->
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/viewblogs">
-                          <i class="fas fa-home"></i>
-                      </a>
-                  </li>
-                  <!--create button in nav-->
-                  <li class="nav-item">
-                      <a class="nav-link" href="/createblog">
-                          <i class="fas fa-pencil-alt"></i>
-                      </a>
-                  </li>
-                  <!--sign in / sign out options in nav-->
-
-                  <li class="nav-item dropdown">
-                      <button onclick="myFunction()" class="nav-link dropbtn"><i class="fas fa-user"></i></button>
-                      <div id="myDropdown" class="dropdown-content">
-                          <a href="#">Sign in</a>
-                          <a href="#">Sign out</a>
-                      </div>
-                  </li>
-              </ul>
-              <!--search for blogs input in nav-->
-              <form class="d-flex ml-auto">
-                  <input class="form-control me-2" id="searchBlogs" type="search"
-                      placeholder="Search Potentially a Blog" aria-label="Search">
-                  <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
-                      <i class="fas fa-search"></i>
-                  </button>
-              </form>
-          </div>
-      </div>
-  </nav>
-  <!-- end of nav bar-->
-
-<div class="container" id="headMar">
-    <div class="row text-center">
-        <div class="col-12">
-            <h1>Potentially a Login Screen</h1>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
+                    height="" class="d-inline-block align-top logo">
+            </a>
+            <!--home button in nav-->
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/viewblogs">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <!--create button in nav-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/createblog">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </li>
+                    <!--sign in / sign out options in nav-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            Sign in
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Sign out
+                        </a>
+                    </li>
+                </ul>
+                <!--search for blogs input in nav-->
+                <form class="d-flex">
+                    <input class="form-control me-2" id="searchBlogs" type="search"
+                        placeholder="Search Potentially a Blog" aria-label="Search">
+                    <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-</div>
+    </nav>
+    <!-- end of nav bar-->
 
-<div class="container" id="loginForm">
-    <div class="row">
-        <div class="col-12 text-center mt-3">
-            <h2>Please provide your information</h2>
-        </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center" id="usernameCon">
-                <input placeholder="Username" type="text"/>
+    <div class="container" id="headMar">
+        <div class="row text-center">
+            <div class="col-12">
+                <h1>Potentially a Login Screen</h1>
             </div>
         </div>
     </div>
-    <div class="container">
+
+    <div class="container" id="loginForm">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center" id="usernameCon">
-                <input placeholder="Password" type="text"/>
+            <div class="col-12 text-center mt-3">
+                <h2>Please provide your information</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center" id="usernameCon">
+                        <input placeholder="Username" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center" id="usernameCon">
+                        <input placeholder="Password" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-4 col-lg-6">
+                        <button class="btn btn-primary btn-block mt-3 mt-lg-5">Sign up</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-4 col-lg-6">
-          <button class="btn btn-primary btn-block mt-3 mt-lg-5">Sign up</button>
-        </div>
-      </div>
-  </div>
-    </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

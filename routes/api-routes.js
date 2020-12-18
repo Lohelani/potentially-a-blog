@@ -31,7 +31,11 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+  app.get("/viewblogs", function(req,response) {
+    res.json(response);
+  });
 
+  // Route for getting some data about our user to be used client side
   app.get("/api/userdata", function(req, res) {
     if (!req.user) {
 
