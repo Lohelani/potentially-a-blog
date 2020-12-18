@@ -17,12 +17,17 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/blogCreate.html"));
   });
 
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
-
   app.get("/signup", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/signUp.html"));
+  });
+
+  //   app.get("/login", function(req, res) {
+
+  //   });
+
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.end();
   });
 
   //might need app.get("/google")
