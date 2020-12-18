@@ -25,8 +25,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/signUp.html"));
   });
 
-  //auth route /google might need to be here
-
+  //might need app.get("/google")
   // Here we've add our authenticate middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", authenticate, function(req, res) {

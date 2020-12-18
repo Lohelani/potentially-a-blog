@@ -12,45 +12,48 @@
 <body class="homeBody">
 
 <!-- beginning of nav bar-->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80" height="" class="d-inline-block align-top logo">
-      </a>
-     <!--home button in nav-->
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/viewblogs">
-              <i class="fas fa-home"></i>
-            </a>
-          </li>
-          <!--create button in nav-->
-          <li class="nav-item">
-            <a class="nav-link" href="/createblog">
-              <i class="fas fa-pencil-alt"></i>
-            </a>
-          </li>
-          <!--sign in / sign out options in nav-->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-user"></i>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/login">Sign in</a></li>
-              <li><a class="dropdown-item" href="/login">Sign out</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!--search for blogs input in nav-->
-        <form class="d-flex">
-          <input class="form-control me-2" id="searchBlogs" type="search" placeholder="Search Potentially a Blog" aria-label="Search">
-          <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
+
+    <!-- beginning of nav bar-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
+                  height="" class="d-inline-block align-top logo">
+          </a>
+          <!--home button in nav-->
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/viewblogs">
+                          <i class="fas fa-home"></i>
+                      </a>
+                  </li>
+                  <!--create button in nav-->
+                  <li class="nav-item">
+                      <a class="nav-link" href="/createblog">
+                          <i class="fas fa-pencil-alt"></i>
+                      </a>
+                  </li>
+                  <!--sign in / sign out options in nav-->
+
+                  <div class="nav-item dropdown">
+                      <button onclick="myFunction()" class="nav-link dropbtn"><i class="fas fa-user"></i></button>
+                      <div id="myDropdown" class="dropdown-content">
+                          <a href="#">Sign in</a>
+                          <a href="#">Sign out</a>
+                      </div>
+                  </div>
+              </ul>
+              <!--search for blogs input in nav-->
+              <form class="d-flex">
+                  <input class="form-control me-2" id="searchBlogs" type="search"
+                      placeholder="Search Potentially a Blog" aria-label="Search">
+                  <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
+                      <i class="fas fa-search"></i>
+                  </button>
+              </form>
+          </div>
       </div>
-    </div>
   </nav>
   <!-- end of nav bar-->
 
