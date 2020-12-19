@@ -7,65 +7,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Blog Login" content="Enter your description here" />
 
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>PaB/Login</title>
 </head>
 
 <body>
+    <body class="signupBody">
 
-    <!-- beginning of nav bar-->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
-                    height="" class="d-inline-block align-top logo">
-            </a>
-            <!--home button in nav-->
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/viewblogs">
-                            <i class="fas fa-home"></i>
+        <!-- beginning of nav bar-->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" alt="logo" width="80"
+                        height="" class="d-inline-block align-top logo">
+                </a>
+                <!--home button in nav-->
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/viewblogs">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <!--create button in nav-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/createblog">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </li>
+                        <!--sign in / sign out options in nav-->
+                        <li class="nav-item">
+                          <a class="nav-link" href="/login">
+                              Sign in
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Sign out
                         </a>
                     </li>
-                    <!--create button in nav-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/createblog">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                    </li>
-                    <!--sign in / sign out options in nav-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">
-                            Sign in
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signup">
-                            Sign up
-                        </a>
-                    </li>
-                </ul>
-                <!--search for blogs input in nav-->
-                <form class="d-flex">
-                    <input class="form-control me-2" id="searchBlogs" type="search"
-                        placeholder="Search Potentially a Blog" aria-label="Search">
-                    <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
+                    </ul>
+                    <!--search for blogs input in nav-->
+                    <form class="d-flex ml-auto">
+                        <input class="form-control" id="searchBlogs" type="search"
+                            placeholder="Search Potentially a Blog" aria-label="Search">
+                        <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- end of nav bar-->
+        </nav>
+        <!-- end of nav bar-->
 
     <div class="container" id="headMar">
         <div class="row text-center">
             <div class="col-12">
-                <h1>Potentially a Login Screen</h1>
+                <h1 class="loginH">Potentially a Login Screen</h1>
             </div>
         </div>
     </div>
@@ -73,19 +73,19 @@
     <div class="container" id="loginForm">
         <div class="row">
             <div class="col-12 text-center mt-3">
-                <h2>Please provide your information</h2>
+                <h2 class="loginH2">Please provide your information</h2>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center" id="usernameCon">
-                        <input placeholder="Username" type="text" />
+                        <input placeholder="Username" type="text" class="loginInput"/>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center" id="usernameCon">
-                        <input placeholder="Password" type="text" />
+                        <input placeholder="Password" type="text" class="loginInput" />
                     </div>
                 </div>
             </div>
