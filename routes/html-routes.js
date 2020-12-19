@@ -5,7 +5,6 @@ var authenticate = require("../config/middleware/authenticate");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    //send user to the home page, an account is not necessary unless they want to create a post
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
@@ -22,19 +21,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/signUp.html"));
   });
 
-  //   app.get("/members", isAuthenticated, function(req, res) {
-  //     res.sendFile(path.join(__dirname, "../public/members.html"));
-  //   });
-
-  //   app.get("/login", function(req, res) {
-
-  //   });
 
   app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
     //res.end();
   });
 
-  //might need app.get("/google")
 
 };
