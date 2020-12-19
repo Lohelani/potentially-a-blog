@@ -48,17 +48,4 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-
-  app.get("/api/user_data", function(req, res) {
-    if (!req.author) {
-
-      res.json({});
-    } else {
-
-      res.json({
-        email: req.author.email,
-        id: req.author.id
-      });
-    }
-  });
 };
