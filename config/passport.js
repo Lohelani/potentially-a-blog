@@ -7,17 +7,17 @@ var db = require("../models");
 passport.use(
   new LocalStrategy(
     {
-      emailField: "email"
+      usernameField: "username"
     },
-    function(email, password, username, done) {
+    function(username, password, done) {
       db.Author.findOne({
         where: {
-          email: email
+          username: username
         }
       }).then(function(dbAuthor) {
         if (!dbAuthor) {
           return done(null, false, {
-            message: "Incorrect email."
+            message: "Incorrect username."
           });
         }
         else if (!dbAuthor.validPassword(password)) {
