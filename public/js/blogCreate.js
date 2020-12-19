@@ -1,39 +1,27 @@
 $(document).ready(function () {
-  // Getting jQuery references to the post body, title, form, and author select
-  var bodyInput = $("#textInput");
   var titleInput = $("#titleInput");
-  var cmsForm = $("#cms");
-  // var authorSelect = $("#author");
+  var bodyInput = $("#textInput");
 
 
-  // Adding an event listener for when the form is submitted
-  $(cmsForm).on("submit", handleFormSubmit);
-
-  // A function for handling what happens when the form to create a new post is submitted
-  function handleFormSubmit(event) {
+  // When the post button is clicked, validate that the title and body are not blank
+  $("#postBtn").on("click", function (event) {
     event.preventDefault();
-    // Wont submit the post if we are missing a body, title, or author
-    if (!titleInput.val().trim() || !bodyInput.val().trim()) {
+    // get userid from localstorage
+    var blogData = {
+      title: titleInput.val().trim(),
+      body: bodyInput.val().trim(),
+      author: "test"//use userid here
+    };
+    console.log("Blog Data : " +blogData);
+    if (!blogData.body || !blogData.title) {
       return;
     }
-    // Constructing a newPost object to hand to the database
-    var newPost = { //missing username
-      title: titleInput
-        .val()
-        .trim(),
-      body: bodyInput
-        .val()
-        .trim(),
-    };
-    submitPost(newPost);
-  }
 
-  // Submits a new post and brings user to blog page upon completion
-  function submitPost(post) {
-    $.post("/api/viewblogs", post, function () {
-      window.location.href = "/viewblogs";
+    $.post("/api/createblog", blogData).then(function(){
+      bodyInput.val("");
+      titleInput.val("");
+      window.location.replace("/viewblogs");
     });
-  }
 
-  // Gets post data for the current post if we're editing, or if we're adding to an author's existing posts
+  });
 });

@@ -22,7 +22,6 @@ $(document).ready(function () {
     signUpUser(userData);
     usernameInput.val("");
     passwordInput.val("");
-    //usernameInput("");
   });
 
 
@@ -32,7 +31,8 @@ $(document).ready(function () {
       username: userData.username
     })
       .then(function() {
-
+        // server needs to return userid
+        //store userid in local storage for client side
         window.location.replace("/createblog");
       });
   }
