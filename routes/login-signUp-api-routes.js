@@ -7,7 +7,7 @@ module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(
       //{
-      console.log(req.user.Author)
+      console.log(req.user.username)
       // username: req.author.username,
       // id: req.author.id
     //}
