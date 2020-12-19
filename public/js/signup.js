@@ -1,78 +1,79 @@
 $(document).ready(function () {
   // Getting references to our form and input
-  var signUpForm = $("form.signup");
-  var emailInput = $("input#registerEmail");
-  var passwordInput = $("input#registerPassword");
-  var usernameInput = $("input#registerUsername");
+  //var signUpForm = $("form.signup");
+  //var emailInput = $("input#registerEmail");
+  var passwordInput = $("#registerPassword");
+  var usernameInput = $("#registerUsername");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", function (event) {
+  $(".signupBtn").on("click", function (event) {
+    console.log("test");
     event.preventDefault();
     var userData = {
-      email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
       username: usernameInput.val().trim()
     };
+    console.log(userData);
 
-    if (!userData.email || !userData.password) {
+    if (!userData.username || !userData.password) {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
-    emailInput.val("");
+    signUpUser(userData);
+    usernameInput.val("");
     passwordInput.val("");
-    usernameInput("");
+    //usernameInput("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password) {
+  function signUpUser(userData) {
     $.post("/api/signup", {
-      email: email,
-      password: password,
-      username: username
+      password: userData.password,
+      username: userData.username
     })
       .then(function() {
-        window.location.replace("/viewblogs");
-      })
-      .catch(handleLoginErr);
-  }
-
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadaIn(500);
+        console.log("done");
+        // window.location.replace("/viewblogs");
+      });
   }
 });
+
+//   function handleLoginErr(err) {
+//     $("#alert .msg").text(err.responseJSON);
+//     $("#alert").fadaIn(500);
+//   }
+// );
 
 // When the signup button is clicked, we validate the email and password are not blank
-signUpForm.on("submit", function(event) {
-  event.preventDefault();
-  var userData = {
-    email: emailInput.val().trim(),
-    password: passwordInput.val().trim()
-  };
+// signUpForm.on("submit", function(event) {
+//   event.preventDefault();
+//   var userData = {
+//     username: usernameInput.val().trim(),
+//     password: passwordInput.val().trim()
+//   };
 
-  if (!userData.email || !userData.password) {
-    return;
-  }
-  // If we have an email and password, run the signUpUser function
-  signUpUser(userData.email, userData.password);
-  emailInput.val("");
-  passwordInput.val("");
-});
+//   if (!userData.username || !userData.password) {
+//     return;
+//   }
+//   // If we have an email and password, run the signUpUser function
+//   signUpUser(userData.username, userData.password);
+//   usernameInput.val("");
+//   passwordInput.val("");
+// });
 
-// Does a post to the signup route. If successful, we are redirected to the members page
-// Otherwise we log any errors
-function signUpUser(email, password) {
-  $.post("/api/signup", {
-    email: email,
-    password: password
-  }).then(function(data) {
-    window.location.replace("/viewblogs");
-    console.log(data);
-  }).catch(handleLoginErr);
-}
-function handleLoginErr(err) {
-  $("#alert .msg").text(err.responseJSON);
-  $("#alert").fadaIn(500);
-}
+// // Does a post to the signup route. If successful, we are redirected to the members page
+// // Otherwise we log any errors
+// function signUpUser(username, password) {
+//   $.post("/api/signup", {
+//     username: username,
+//     password: password
+//   }).then(function(data) {
+//     window.location.replace("/viewblogs");
+//     console.log(data);
+//   }).catch(handleLoginErr);
+// }
+// function handleLoginErr(err) {
+//   $("#alert .msg").text(err.responseJSON);
+//   $("#alert").fadaIn(500);
+// }

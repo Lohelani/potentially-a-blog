@@ -13,22 +13,28 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/createblog", function(req, res) {
+  //authenticate is used to restrict the user from viewing this page unless signed in
+  app.get("/createblog", authenticate, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/blogCreate.html"));
-  });
-
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   app.get("/signup", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/signUp.html"));
   });
 
-  //might need app.get("/google")
-  // Here we've add our authenticate middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", authenticate, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  //   app.get("/members", isAuthenticated, function(req, res) {
+  //     res.sendFile(path.join(__dirname, "../public/members.html"));
+  //   });
+
+  //   app.get("/login", function(req, res) {
+
+  //   });
+
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+    //res.end();
   });
+
+  //might need app.get("/google")
+
 };

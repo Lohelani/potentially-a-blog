@@ -16,6 +16,11 @@
 
 }
 
+.personalBody{
+    background-image: url("https://cutewallpaper.org/21/artsy-backrounds/Beautiful-in-2019-Artsy-wallpaper-iphone-Abstract-.jpg");
+
+}
+
 .navbar {
     background-color: rgb(4, 4, 46);
     padding: 10px;
@@ -51,7 +56,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.containerBlog {
+.containerBlog, .userblogContainer {
     display: flex;
     float: left;
     background-color: rgb(72, 106, 63);
@@ -178,3 +183,28 @@ textarea{
     font-size: 30px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Cabin', sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: rgb(40, 73, 44);
+    color: white;
+    border-radius: 10px;
+}
+
+.usernameContainer {
+    font-family: 'Cabin', sans-serif;
+    color: black;
+    
+    margin-left: 20px;
+}
+
+h2{
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 30px;
+}
