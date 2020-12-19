@@ -5,7 +5,6 @@ var passport = require("../config/passport");
 module.exports = function(app) {
 
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json(req.email);
     res.json(req.username);
     res.json(req.password);
     //res.json(db.Author)
@@ -14,7 +13,7 @@ module.exports = function(app) {
 
   app.post("/api/signup", function(req, res) {
     db.Author.create({
-      email: req.body.email,
+      username: req.body.username,
       password: req.body.password
     })
       .then(function() {
@@ -43,7 +42,7 @@ module.exports = function(app) {
     } else {
 
       res.json({
-        email: req.user.email,
+        username: req.user.username,
         id: req.user.id
       });
     }
