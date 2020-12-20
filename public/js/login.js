@@ -25,13 +25,10 @@ $(document).ready(function () {
     $.post("/api/login", {
       username: userData.username,
       password: userData.password,
-      authorId: req.body.author
+    //   authorId: req.body.author
     })
       .then(function() {
         window.location.replace("/viewblogs");
-      })
-      .catch(function(err){
-        console.log(err);
-      }
-    }
+      });
+  }
 });
