@@ -2,7 +2,6 @@ $(document).ready(function () {
   var titleInput = $("#titleInput");
   var bodyInput = $("#textInput");
 
-
   // When the post button is clicked, validate that the title and body are not blank
   $("#postBtn").on("click", function (event) {
     event.preventDefault();
@@ -10,7 +9,7 @@ $(document).ready(function () {
     var blogData = {
       title: titleInput.val().trim(),
       body: bodyInput.val().trim(),
-      author: "test"//use userid here
+      //author: //use userid here
     };
     console.log("Blog Data : " +blogData);
     if (!blogData.body || !blogData.title) {

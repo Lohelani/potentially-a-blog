@@ -28,7 +28,8 @@ $(document).ready(function () {
   function signUpUser(userData) {
     $.post("/api/signup", {
       password: userData.password,
-      username: userData.username
+      username: userData.username,
+      //authorID: req.body.author
     })
       .then(function() {
         // server needs to return userid
