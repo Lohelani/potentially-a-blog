@@ -23,7 +23,8 @@ $(document).ready(function () {
   function loginUser(userData) {
     $.post("/api/login", {
       username: userData.username,
-      password: userData.password
+      password: userData.password,
+      authorId: req.body.author
     })
       .then(function() {
         console.log("done");
