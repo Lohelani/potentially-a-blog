@@ -30,17 +30,6 @@ module.exports = function(app) {
       });
   });
 
-  app.post("api/createblog", function(req, res) {
-    db.Post.create({
-      title: req.body.title,
-      body: req.body.body
-    }).then(function(){
-      res.redirect(307, "/").catch(function(err){
-        res.status(401).json(err);
-      });
-    });
-  });
-
 
   app.get("/logout", function(req, res) {
     req.logout();

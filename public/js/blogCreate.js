@@ -1,7 +1,12 @@
 $(document).ready(function () {
   var titleInput = $("#titleInput");
   var bodyInput = $("#textInput");
-
+  function getUser() {
+    $.get("/api/userdata").then(function (data) {
+      console.log(data);
+    });
+  }
+  getUser();
   // When the post button is clicked, validate that the title and body are not blank
   $("#postBtn").on("click", function (event) {
     event.preventDefault();
@@ -9,9 +14,10 @@ $(document).ready(function () {
       title: titleInput.val().trim(),
       body: bodyInput.val().trim()
     };
-    console.log("Blog Data : " + blogData);
+    console.log(blogData);
 
-    if (!blogData.body || !blogData.title) { return;
+    if (!blogData.body || !blogData.title) {
+      return;
     }
     // If we have a title and body, run the signUpUser function
     blogCreate(blogData);
@@ -21,6 +27,10 @@ $(document).ready(function () {
 
 
   function blogCreate(blogData) {
-    $.post("/api/createblog", { title: blogData.title, body: blogData.body
-    }).then(function () { window.location.replace("/viewblogs");});}
+    $.post("/api/createblog", blogData, function () {
+      window.location.href = "/viewblogs";
+    });
+  }
+
+
 });
