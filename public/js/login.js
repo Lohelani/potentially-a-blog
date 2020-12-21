@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+//might want to add signup redirect button
   var userInput = $("#userInput");
   var passwordInput = $("#passwordInput");
 
@@ -14,20 +14,20 @@ $(document).ready(function () {
     if (!userData.username || !userData.password) {
       return;
     }
+    loginUser(userData);
+    userInput.val("");
+    passwordInput.val("");
+
   });
 
-  loginUser(userData);
-  userInput.val("");
-  passwordInput.val("");
 
   function loginUser(userData) {
     $.post("/api/login", {
       username: userData.username,
       password: userData.password,
-      authorId: req.body.author
+    //   authorId: req.body.author
     })
       .then(function() {
-        console.log("done");
         window.location.replace("/viewblogs");
       });
   }
