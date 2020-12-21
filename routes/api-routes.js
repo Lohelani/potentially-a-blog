@@ -83,14 +83,14 @@ module.exports = function(app) {
 
   app.get("/logout", function(req, res) {
     req.logout();
-    deserializeUser();
+    passport.deserializeUser();
     res.redirect("/");
   });
 
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
+  // app.get("/logout", function(req, res) {
+  //   req.logout();
+  //   res.redirect("/");
+  // });
 
   // Route for getting some data about our user to be used client side
   app.get("/api/userdata", function(req, res) {

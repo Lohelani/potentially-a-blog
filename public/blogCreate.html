@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>PaB/create</title>
 </head>
+
 <body class="createBody">
     <!-- beginning of nav bar-->
     <nav class="navbar navbar-expand-lg">
@@ -35,15 +37,10 @@
                     </li>
                     <!--sign in / sign out options in nav-->
                     <li class="nav-item">
-                      <a class="nav-link" href="/login">
-                          Sign in
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/signup">
-                        Sign up
-                    </a>
-                </li>
+                        <a class="nav-link" href="/logout">
+                            Sign out
+                        </a>
+                    </li>
                 </ul>
                 <!--search for blogs input in nav-->
                 <form class="d-flex">
@@ -60,35 +57,36 @@
 
     <div class="helloContainer">
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <h2>Hello,<span class="member-name"></span><br>Start blogging</h2>
-          </div>
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Hello,<span class="member-name"></span><br>Start blogging</h2>
+            </div>
         </div>
-      </div>
+    </div>
 
     <div class="blogContainer">
         <div id="cms">
             <div class="mb-3">
-              <input type="title" class="form-control" id="titleInput" aria-describedby="title" placeholder="Title">
+                <input type="title" class="form-control" id="titleInput" aria-describedby="title" placeholder="Title">
             </div>
             <div class="mb-3">
-              <textarea type="text" class="form-control" id="textInput">
+                <textarea type="text" class="form-control" id="textInput">
                   </textarea>
             </div>
             <label id="img" for="img">
                 <i class="fas fa-image fa-2x"></i>
             </label>
-            <input type="file" id="img" name="img" accept="image/*"> 
+            <input type="file" id="img" name="img" accept="image/*">
             <br>
             <button type="submit" id="postBtn" class="btn btn-primary">Post</button>
-            
-          </div>
+
+        </div>
     </div>
 
 
-   
+
     <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="js/blogCreate.js"></script>
+    <script src="js/blogCreate.js"></script>
 
 </body>
+
 </html>
