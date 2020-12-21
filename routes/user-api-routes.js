@@ -3,7 +3,7 @@ var db = require("../models");
 var passport = require("../config/passport.js");
 
 module.exports = function(app) {
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.get("/api/login", passport.authenticate("local"), function(req, res) {
     res.json({
       username: req.user.username,
       id: req.user.id
@@ -11,25 +11,25 @@ module.exports = function(app) {
     );
   });
 
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json(req.username);
-    res.json(req.password);
-    //res.json(db.Author)
-  });
+  // app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  //   res.json(req.username);
+  //   res.json(req.password);
+  //   //res.json(db.Author)
+  // });
 
 
-  app.post("/api/signup", function(req, res) {
-    db.Author.create({
-      password: req.body.password,
-      username: req.body.username
-    })
-      .then(function() {
-        res.redirect(307, "/api/login");
-      })
-      .catch(function(err){
-        res.status(401).json(err);
-      });
-  });
+  // app.post("/api/signup", function(req, res) {
+  //   db.Author.create({
+  //     password: req.body.password,
+  //     username: req.body.username
+  //   })
+  //     .then(function() {
+  //       res.redirect("/api/login");
+  //     })
+  //     .catch(function(err){
+  //       res.status(401).json(err);
+  //     });
+  // });
 
 
   app.post("/api/signup", function(req, res) {
@@ -38,7 +38,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
-        console.log(req);
+        console.log(req.user);
         //res.redirect(307, "/api/login");
       })
       .catch(function(err) {
@@ -51,9 +51,9 @@ module.exports = function(app) {
     db.Post.create({
       title: req.body.title,
       body: req.body.body,
-      AuthorId:req.body.author
+      AuthorId:req.user.id
     }).then(function(){
-      res.redirect(307, "/").catch(function(err){
+      res.redirect("/").catch(function(err){
         res.status(401).json(err);
       });
     });
@@ -83,14 +83,14 @@ module.exports = function(app) {
 
   app.get("/logout", function(req, res) {
     req.logout();
-    deserializeUser();
+    passport.deserializeUser("local");
     res.redirect("/");
   });
 
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
+  // app.get("/logout", function(req, res) {
+  //   req.logout();
+  //   res.redirect("/");
+  // });
 
   // Route for getting some data about our user to be used client side
   app.get("/api/userdata", function(req, res) {
