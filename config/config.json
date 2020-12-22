@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "database": "potentialBlog",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

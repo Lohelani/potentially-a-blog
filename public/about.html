@@ -14,7 +14,7 @@
     <title>PaB/register</title>
 </head>
 
-<body class="signupBody">
+<body class="aboutBody">
 
     <!-- beginning of nav bar-->
     <nav class="navbar navbar-expand-lg">
@@ -53,41 +53,37 @@
 
     <div class="paginationContainer">
         <ul class="pagination">
-            <li class="page-item active" aria-current="page">
-                <span class="page-link">Sign-up</span>
+            <li class="page-item" aria-current="page">
+                <a class="page-link" href="signUp.html">Sign-up</a>
             </li>
-            <li class="page-item"><a class="page-link" href="about.html">About Us</a></li>
+            <li class="page-item active">
+                <span class="page-link">About Us</span>
+            </li>
         </ul>
     </div>
 
-    <div class="signupContainer">
-        <header class="signupHeader">
-            Potentially a Blog
-        </header>
-        <p class="signupParagraph">
-            Come for what you want to express.<br>Stay for what you can discover.
+    <div class="aboutContainer">
+        <img class="logoImg" src="https://i.ibb.co/dcJ68hG/Screen-Shot-2020-12-12-at-12-06-16-PM.png" width="250"
+            alt="logo">
+        <h2 class="aboutHeader">
+            <span>Potentially a Blog</span>, an online platform to express your thoughts or memes, or both. You choose.
+        </h2>
+        <p class="aboutParagraph">
+            <span>PaB</span> made it really simple for anyone to make a blog and think freely. Stories, MEMES, dumb
+            jokes, smart jokes, dad jokes, art, deep thoughts, everyday thoughts. PaB welcomes everyone, so come on in.
         </p>
-        <div>
-            <div class="mb-3">
-                <input type="username" class="form-control" id="registerUsername" aria-describedby="username"
-                    placeholder="Username">
-            </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" id="registerPassword" placeholder="Password">
-            </div>
-            <a href="/createblog">
-                <button type="submit" class="btn btn-primary signupBtn">Sign up!</button>
-                <a href="login.html">
-                    <button type="submit" class="btn btn-primary loginSignBtn">Already have an account? Log in</button>
-                </a>
-
-            </a>
-        </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/signup.js"></script>
 
+
+
+
+    <script src="js/signup.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
