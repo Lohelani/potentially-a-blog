@@ -86,7 +86,6 @@ module.exports = function(app) {
 
   app.get("/logout", function(req, res) {
     req.logout();
-    passport.deserializeUser("local");
     res.redirect("/");
   });
 
