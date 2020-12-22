@@ -26,86 +26,79 @@ $(document).ready(function () {
             window.location.replace("/createblog");
         }
     });
+  }
+  getUser();
 
-    function createNewRow(post) {
-        var formattedDate = new Date(post.createdAt).toLocaleDateString();
-        var newPostCard = $("<div>");
-        newPostCard.addClass("card");
-        var newPostCardHeading = $("<div>");
-        newPostCardHeading.addClass("card-header");
-        var deleteBtn = $("<button>");
-        deleteBtn.text("Delete");
-        deleteBtn.addClass("deleteBtn");
-        var editBtn = $("<button>");
-        editBtn.text("Edit");
-        editBtn.addClass("editBtn");
-        var newPostTitle = $("<h2>");
-        var newPostDate = $("<small>");
-        var newPostAuthor = $("<h5>");
-        newPostAuthor.text("Blogger: " + post.Author.name);
-        newPostAuthor.css({
-            float: "right",
-            "margin-top":
-                "-10px"
-        });
-        var newPostCardBody = $("<div>");
-        newPostCardBody.addClass("card-body");
-        var newPostBody = $("<p>");
-        newPostTitle.text(post.title + " ");
-        newPostBody.text(post.body);
-        newPostDate.text(formattedDate);
-        newPostTitle.append(newPostDate);
-        newPostCardHeading.append(deleteBtn);
-        newPostCardHeading.append(editBtn);
-        newPostCardHeading.append(newPostTitle);
-        newPostCardHeading.append(newPostAuthor);
-        newPostCardBody.append(newPostBody);
-        newPostCard.append(newPostCardHeading);
-        newPostCard.append(newPostCardBody);
-        newPostCard.data("post", post);
-        return newPostCard;
-    }
+  var blogs;
 
-    // The code below handles the case where we want to get blogs for a specific author
-    // Looks for a query param in the url for author_id
-    var url = window.location.search;
-    var authorId;
-    if (url.indexOf("?author_id=") !== -1) {
-        authorId = url.split("=")[1];
-        getblogs(authorId);
-    }
-    // If there's no authorId we just get all blogs as usual
-    else {
-        getblogs();
-    }
+  // $("#blogNav").on("click", function () {
+  //   var signinData = {
+  //     username: userInput.val(),
+  //   };
+  //   if (isNaN(signinData.username)) {
+  //     window.location.replace("/login");
+  //   } else {
+  //     window.location.replace("/createblog");
+  //   }
+  // });
 
-    // This function grabs blogs from the database and updates the view
-    function getblogs(author) {
-        authorId = author || "";
-        if (authorId) {
-            authorId = "/?author_id=" + authorId;
-        }
-        $.get("/api/blogs" + authorId, function (data) {
-            console.log("blogs", data);
-            blogs = data;
-            if (!blogs || !blogs.length) {
-                displayEmpty(author);
-            }
-            else {
-                initializeRows();
-            }
-        });
-    }
+  function createNewRow(post) {
+    var formattedDate = new Date(post.createdAt).toLocaleDateString();
+    var newPostCard = $("<div>");
+    newPostCard.addClass("card");
+    var newPostCardHeading = $("<div>");
+    newPostCardHeading.addClass("card-header");
+    var deleteBtn = $("<button>");
+    deleteBtn.text("Delete");
+    deleteBtn.addClass("deleteBtn");
+    var editBtn = $("<button>");
+    editBtn.text("Edit");
+    editBtn.addClass("editBtn");
+    var newPostTitle = $("<h2>");
+    var newPostDate = $("<small>");
+    var newPostAuthor = $("<h5>");
+    newPostAuthor.text("Blogger: " + post.Author.name);
+    newPostAuthor.css({
+      float: "right",
+      "margin-top":
+        "-10px"
+    });
+    var newPostCardBody = $("<div>");
+    newPostCardBody.addClass("card-body");
+    var newPostBody = $("<p>");
+    newPostTitle.text(post.title + " ");
+    newPostBody.text(post.body);
+    newPostDate.text(formattedDate);
+    newPostTitle.append(newPostDate);
+    newPostCardHeading.append(deleteBtn);
+    newPostCardHeading.append(editBtn);
+    newPostCardHeading.append(newPostTitle);
+    newPostCardHeading.append(newPostAuthor);
+    newPostCardBody.append(newPostBody);
+    newPostCard.append(newPostCardHeading);
+    newPostCard.append(newPostCardBody);
+    newPostCard.data("post", post);
+    return newPostCard;
+  }
 
-    // This function does an API call to delete blogs
-    function deletePost(id) {
-        $.ajax({
-            method: "DELETE",
-            url: "/api/blogs/" + id
-        })
-            .then(function () {
-                getblogs(blogCategory.val());
-            });
+  // The code below handles the case where we want to get blogs for a specific author
+  // Looks for a query param in the url for author_id
+  var url = window.location.search;
+  var authorId;
+  if (url.indexOf("?author_id=") !== -1) {
+    authorId = url.split("=")[1];
+    getblogs(authorId);
+  }
+  // If there's no authorId we just get all blogs as usual
+  else {
+    getblogs();
+  }
+
+  // This function grabs blogs from the database and updates the view
+  function getblogs(author) {
+    authorId = author || "";
+    if (authorId) {
+      authorId = "/?author_id=" + authorId;
     }
 
     // InitializeRows handles appending all of our constructed post HTML inside blogContainer
