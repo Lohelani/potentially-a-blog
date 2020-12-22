@@ -11,6 +11,10 @@ module.exports = function(app) {
     );
   });
 
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json(req.user);
+  });
+
   // app.post("/api/login", passport.authenticate("local"), function(req, res) {
   //   res.json(req.username);
   //   res.json(req.password);
@@ -46,7 +50,7 @@ module.exports = function(app) {
       });
   });
 
-
+//put in blog api
   app.post("/api/createblog", function(req, res) {
     db.Post.create({
       title: req.body.title,
