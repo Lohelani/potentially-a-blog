@@ -272,3 +272,13 @@ h2{
     color: white;
     opacity: 1; /* Firefox */
   }
+
+  #signupButton {
+      position: relative;
+      bottom: 35px;
+  }
+
+  .loginSignBtn {
+      margin-top: 10px;
+      width: 465px;
+  }

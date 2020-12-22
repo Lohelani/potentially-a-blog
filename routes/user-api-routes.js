@@ -7,8 +7,7 @@ module.exports = function(app) {
     res.json({
       username: req.user.username,
       id: req.user.id
-    }
-    );
+    });
   });
 
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -110,3 +109,4 @@ module.exports = function(app) {
     }
   });
 };
+
