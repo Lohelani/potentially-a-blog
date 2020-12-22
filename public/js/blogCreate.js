@@ -1,6 +1,8 @@
 $(document).ready(function () {
   var titleInput = $("#titleInput");
   var bodyInput = $("#textInput");
+  //grabbing username to display
+
   function getUser() {
     $.get("/api/userdata").then(function (data) {
       console.log(data);
@@ -16,12 +18,8 @@ $(document).ready(function () {
       body: bodyInput.val().trim(),
       //author: //use userid here
     };
-<<<<<<< HEAD
     console.log(blogData);
 
-=======
-    console.log("Blog Data : " +blogData);
->>>>>>> 23a6094c5a5cdddb2e5afa37fcaced0c2718f387
     if (!blogData.body || !blogData.title) {
       return;
     }
@@ -32,15 +30,5 @@ $(document).ready(function () {
       window.location.replace("/viewblogs");
     });
 
-<<<<<<< HEAD
-  function blogCreate(blogData) {
-    $.post("/api/createblog", blogData, function () {
-      window.location.href = "/viewblogs";
-    });
-  }
-
-
-=======
   });
->>>>>>> 23a6094c5a5cdddb2e5afa37fcaced0c2718f387
 });
