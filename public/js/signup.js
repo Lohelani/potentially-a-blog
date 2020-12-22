@@ -34,7 +34,7 @@ $(document).ready(function () {
       .then(function() {
         // server needs to return userid
         //store userid in local storage for client side
-        window.location.replace("/createblog");
+        window.location.replace("/login");
       });
   }
 });
