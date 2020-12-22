@@ -7,13 +7,11 @@ $(document).ready(function () {
 
   // When the signup button is clicked, we validate the email and password are not blank
   $(".signupBtn").on("click", function (event) {
-    console.log("test");
     event.preventDefault();
     var userData = {
       password: passwordInput.val().trim(),
       username: usernameInput.val().trim()
     };
-    console.log(userData);
 
     if (!userData.username || !userData.password) {
       return;
@@ -29,12 +27,13 @@ $(document).ready(function () {
     $.post("/api/signup", {
       password: userData.password,
       username: userData.username,
-      //authorID: req.body.author
     })
       .then(function() {
         // server needs to return userid
         //store userid in local storage for client side
-        window.location.replace("/login");
+        // window.location.replace("/login");
+        window.location = "/login";
+
       });
   }
 });
