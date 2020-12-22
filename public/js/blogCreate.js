@@ -16,19 +16,19 @@ $(document).ready(function () {
     event.preventDefault();
     // get userid from localstorage
 
-    var blogData = JSON.stringify({
+    var blogData = {
       title: titleInput.val().trim(),
       body: bodyInput.val().trim(),
       AuthorId: "" + userId
-    });
+    };
     console.log("Blog Data : " +blogData);
     if (!blogData.body || !blogData.title) {
       return;
     }
 
     $.post("/api/createblog", blogData, function(){
-      bodyInput.val("");
-      titleInput.val("");
+      // bodyInput.val("");
+      // titleInput.val("");
       window.location.replace("/viewblogs");
     });
 
