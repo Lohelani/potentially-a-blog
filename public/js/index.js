@@ -1,7 +1,5 @@
 $(document).ready(function () {
-  // STILL NEED TO DO:  //1. delete function should only appear if the user is the owner of the blog
-  //2. work on the search input field in nav
-
+  //make createBlognav (pencil icon on nav) go to sign up if not signed in, and if so go to createblog
   // blogContainer holds all of our blogs
   var blogContainer = $(".containerBlog");
   var blogCategory = $("#category");
@@ -14,6 +12,7 @@ $(document).ready(function () {
   // dynamically creating click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
+  var userInput = $("#userInput");
   // Variable to hold our blogs
 
   function getUser() {
@@ -25,6 +24,17 @@ $(document).ready(function () {
   getUser();
 
   var blogs;
+
+  $("#blogNav").on("click", function () {
+    var signinData = {
+      username: userInput.val(),
+    };
+    if (isNaN(signinData.username)) {
+      window.location.replace("/login");
+    } else {
+      window.location.replace("/createblog");
+    }
+  });
 
   function createNewRow(post) {
     var formattedDate = new Date(post.createdAt).toLocaleDateString();
@@ -45,7 +55,7 @@ $(document).ready(function () {
     newPostAuthor.css({
       float: "right",
       "margin-top":
-                "-10px"
+        "-10px"
     });
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
@@ -165,7 +175,7 @@ function myFunction() {
 }
 console.log(myFunction);
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
@@ -177,3 +187,4 @@ window.onclick = function(event) {
     }
   }
 };
+
