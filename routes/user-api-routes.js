@@ -50,7 +50,7 @@ module.exports = function(app) {
       });
   });
 
-//put in blog api
+  //put in blog api
   app.post("/api/createblog", function(req, res) {
     db.Post.create({
       title: req.body.title,
