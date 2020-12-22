@@ -33,26 +33,12 @@
                             <i class="fas fa-pencil-alt"></i>
                         </a>
                     </li>
-                    <!--sign in / sign out options in nav-->
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">
-                            Sign in
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signup">
-                            Sign up
-                        </a>
-                    </li>
-                </ul>
-                <!--search for blogs input in nav-->
-                <form class="d-flex">
-                    <input class="form-control me-2" id="searchBlogs" type="search"
-                        placeholder="Search Potentially a Blog" aria-label="Search">
-                    <button class="btn btn-outline-success submit" id="searchblogsBtn" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
+                      <a id="signoutBtn" class="nav-link" href="/logout">
+                          Sign out
+                      </a>
+                  </li>
+                </ul>           
             </div>
         </div>
     </nav>
@@ -61,7 +47,8 @@
     <div class="usernameContainer">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h2>USERNAME WILL APPEAR<span class="member-name"></span></h2>
+                <header class="userblogHeader"><span class="member-name"></span>'s blogs</header>
+                
             </div>
         </div>
     </div>
@@ -76,10 +63,10 @@
     </div>
 
     <!--container where music to vibe to-->
-    <div class="musicContainer">
+    <div class="gifContainer">
         <div class="row">
             <div class="col-md-12 blog-container">
-                <img src="https://i.gifer.com/7iKg.gif" alt="catgif" width="350">
+                <img src="https://i.gifer.com/7iKg.gif" alt="catgif" width="370">
             </div>
         </div>
     </div>

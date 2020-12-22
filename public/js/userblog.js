@@ -14,22 +14,22 @@ $(document).ready(function () {
             <div class="container">
             <div class="row">
                 <div class="col-md">
-                <p>${e.title}</p>
+                <h1 class="titleBlog">${e.title}</h1>
                 </div>
                 <div class="col-md">
-                <p>${e.Author.username}</p>
+                <p class="usernameBlog">${e.Author.username}</p>
                 </div>
             </div>
-
             <div class="row">
-                <p>${e.body}</p>
+                <h4 class="bodyBlog">${e.body}</h4>
             </div>
             <div class="row">
-                <button class="delete" data-id="${e.id}">delete</button>
+                <button class="delete" data-id="${e.id}">Delete Post</button>
             </div>
             <div class="row">
                 <button class="edit" data-id="${e.id}">edit</button>
             </div>
+
 
             </div>
         `)
