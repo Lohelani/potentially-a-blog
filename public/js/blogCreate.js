@@ -1,11 +1,13 @@
 $(document).ready(function () {
   var titleInput = $("#titleInput");
   var bodyInput = $("#textInput");
-  //grabbing username to display
+
+  var userId;
 
   function getUser() {
     $.get("/api/userdata").then(function (data) {
       console.log(data);
+      userId = data.id;
     });
   }
   getUser();
@@ -13,20 +15,20 @@ $(document).ready(function () {
   $("#postBtn").on("click", function (event) {
     event.preventDefault();
     // get userid from localstorage
+
     var blogData = {
       title: titleInput.val().trim(),
       body: bodyInput.val().trim(),
-      //author: //use userid here
+      AuthorId: "" + userId
     };
-    console.log(blogData);
-
+    console.log("Blog Data : " +blogData);
     if (!blogData.body || !blogData.title) {
       return;
     }
 
-    $.post("/api/createblog", blogData).then(function(){
-      bodyInput.val("");
-      titleInput.val("");
+    $.post("/api/createblog", blogData, function(){
+      // bodyInput.val("");
+      // titleInput.val("");
       window.location.replace("/viewblogs");
     });
 

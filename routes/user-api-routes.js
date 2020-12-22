@@ -50,17 +50,17 @@ module.exports = function(app) {
   });
 
   //put in blog api
-  app.post("/api/createblog", function(req, res) {
-    db.Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      AuthorId:req.user.id
-    }).then(function(){
-      res.redirect("/").catch(function(err){
-        res.status(401).json(err);
-      });
-    });
-  });
+  // app.post("/api/createblog/", function(req) {
+  //   db.Post.create({
+  //     title: req.body.title,
+  //     body: req.body.body,
+  //     AuthorId: req.body.AuthorId
+  //   }).then(function(){
+  //     // res.redirect("/").catch(function(err){
+  //     //   res.status(401).json(err);
+  //     // });
+  //   });
+  // });
 
   app.get("/api/createblog", function(req,res) {
     res.json({
@@ -86,7 +86,6 @@ module.exports = function(app) {
 
   app.get("/logout", function(req, res) {
     req.logout();
-    passport.deserializeUser("local");
     res.redirect("/");
   });
 

@@ -29,13 +29,18 @@ module.exports = function(app) {
   });
 
   app.post("/api/createblog", function(req, res) {
+
+    console.log(req.body);
+
     db.Post.create({
       title: req.body.title,
-      body: req.body.body
-    }).then(function(){
-      res.redirect(307, "/").catch(function(err){
-        res.status(401).json(err);
-      });
+      body: req.body.body,
+      AuthorId: req.body.AuthorId
+    }).then(function(dbAuthor){
+      res.json(dbAuthor);
+      // res.redirect(307, "/").catch(function(err){
+      //   res.status(401).json(err);
+      // });
     });
   });
 

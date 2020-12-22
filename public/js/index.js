@@ -14,6 +14,15 @@ $(document).ready(function () {
   $(document).on("click", "button.edit", handlePostEdit);
   var userInput = $("#userInput");
   // Variable to hold our blogs
+
+  function getUser() {
+    $.get("/api/userdata").then(function (data) {
+      console.log(data);
+      userId = data.id;
+    });
+  }
+  getUser();
+
   var blogs;
 
   $("#blogNav").on("click", function () {

@@ -282,3 +282,12 @@ h2{
       margin-top: 10px;
       width: 465px;
   }
+
+  #blogNav {
+      background-color: rgb(2, 2, 50);
+      width: 10px;
+      margin-right: 20px;
+      margin-left: 20px;
+      border-color: rgb(2, 2, 50);
+      margin-top:4px;
+  }
