@@ -105,14 +105,14 @@ $(document).ready(function () {
   }
   // InitializeRows handles appending all of our constructed post HTML inside blogContainer
   // This function constructs a post's HTML
-  function initializeRows() {
-    blogContainer.empty();
-    var blogsToAdd = [];
-    for (var i = 0; i < blogs.length; i++) {
-      blogsToAdd.push(createNewRow(blogs[i]));
-    }
-    blogContainer.append(blogsToAdd);
-  }
+  // function initializeRows() {
+  //   blogContainer.empty();
+  //   var blogsToAdd = [];
+  //   for (var i = 0; i < blogs.length; i++) {
+  //     blogsToAdd.push(createNewRow(blogs[i]));
+  //   }
+  //   blogContainer.append(blogsToAdd);
+  // }
   // This function figures out which post we want to delete and then calls deletePost
   function handlePostDelete() {
     var currentPost = $(this)
@@ -149,7 +149,7 @@ $(document).ready(function () {
     console.log(data)
     data.forEach((e,i) => {
       var container = $("#blogContainer");
-      for(var i=0;i < data.length; i++){
+      // for(var i=0 ;i < data.length; i++){
         container.append(`<div class="containerAppend">
         <div class="row">
           <div class="col-md">
@@ -165,7 +165,7 @@ $(document).ready(function () {
       </div>
       <hr>
 `)
-      }
+      
       // $("#blogContainer").append(`
       //   <div class="containerAppend">
       //     <div class="row">
