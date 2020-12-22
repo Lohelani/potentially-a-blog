@@ -27,6 +27,9 @@ $(document).ready(function () {
             <div class="row">
                 <button class="delete" data-id="${e.id}">delete</button>
             </div>
+            <div class="row">
+                <button class="edit" data-id="${e.id}">delete</button>
+            </div>
 
             </div>
         `)
