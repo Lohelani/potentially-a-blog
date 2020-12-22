@@ -25,16 +25,16 @@ $(document).ready(function () {
 
   var blogs;
 
-  $("#blogNav").on("click", function () {
-    var signinData = {
-      username: userInput.val(),
-    };
-    if (isNaN(signinData.username)) {
-      window.location.replace("/login");
-    } else {
-      window.location.replace("/createblog");
-    }
-  });
+  // $("#blogNav").on("click", function () {
+  //   var signinData = {
+  //     username: userInput.val(),
+  //   };
+  //   if (isNaN(signinData.username)) {
+  //     window.location.replace("/login");
+  //   } else {
+  //     window.location.replace("/createblog");
+  //   }
+  // });
 
   function createNewRow(post) {
     var formattedDate = new Date(post.createdAt).toLocaleDateString();
