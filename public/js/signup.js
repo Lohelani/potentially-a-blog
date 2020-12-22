@@ -22,17 +22,18 @@ $(document).ready(function () {
     signUpUser(userData);
     usernameInput.val("");
     passwordInput.val("");
-    //usernameInput("");
   });
 
 
   function signUpUser(userData) {
     $.post("/api/signup", {
       password: userData.password,
-      username: userData.username
+      username: userData.username,
+      //authorID: req.body.author
     })
       .then(function() {
-
+        // server needs to return userid
+        //store userid in local storage for client side
         window.location.replace("/createblog");
       });
   }
