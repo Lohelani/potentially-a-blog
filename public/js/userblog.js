@@ -9,7 +9,7 @@ $(document).ready(function () {
         console.log(userId)
         $.get("/api/posts/" + userId, function (data) {
             console.log(data)
-            data.forEach(e => {
+            data.forEach(function(e) {
                 $("#blogContainer").append(`
             <div class="container">
             <div class="row">
