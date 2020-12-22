@@ -29,7 +29,6 @@ $(document).ready(function () {
       username: userData.username,
     })
       .then(function() {
-        console.log("test")
         // server needs to return userid
         //store userid in local storage for client side
         // window.location.replace("/login");

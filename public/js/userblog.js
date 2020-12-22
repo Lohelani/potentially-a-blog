@@ -9,7 +9,7 @@ $(document).ready(function () {
         console.log(userId)
         $.get("/api/posts/" + userId, function (data) {
             console.log(data)
-            data.forEach(function(e) {
+            data.forEach(function (e) {
                 $("#blogContainer").append(`
             <div class="container">
             <div class="row">
@@ -24,10 +24,29 @@ $(document).ready(function () {
             <div class="row">
                 <p>${e.body}</p>
             </div>
+            <div class="row">
+                <button class="delete" data-id="${e.id}">delete</button>
+            </div>
 
             </div>
         `)
             });
+
+            $(".delete").on("click", function () {
+                var id = $(this).attr("data-id")
+                console.log(id)
+        
+                $.ajax({
+                    method: "DELETE",
+                    url: "/api/posts/" + id
+                }).then(function () {
+                    window.location.replace("/userblog");
+
+                });
+            })
         });
     });
+
+    
 });
+
