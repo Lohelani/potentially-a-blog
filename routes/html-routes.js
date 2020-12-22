@@ -27,5 +27,9 @@ module.exports = function(app) {
     //res.end();
   });
 
+  app.get("/userblog", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/userblog.html"));
+  });
+
 
 };

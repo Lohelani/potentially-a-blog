@@ -28,6 +28,16 @@ module.exports = function(app) {
     });
   });
 
+  app.delete("/api/authors/:id", function(req, res) {
+    db.Author.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbAuthor) {
+      res.json(dbAuthor);
+    });
+  });
+
   app.post("/api/createblog", function(req, res) {
 
     console.log(req.body);
@@ -41,16 +51,6 @@ module.exports = function(app) {
       // res.redirect(307, "/").catch(function(err){
       //   res.status(401).json(err);
       // });
-    });
-  });
-
-  app.delete("/api/authors/:id", function(req, res) {
-    db.Author.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbAuthor) {
-      res.json(dbAuthor);
     });
   });
 
