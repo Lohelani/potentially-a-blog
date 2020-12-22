@@ -9,13 +9,7 @@ $(document).ready(function () {
   var searchBlogs = $("#searchBlogs");
   console.log(searchBlogs);
   //submit button to search
-  function getUser() {
-    $.get("/api/userdata").then(function (data) {
-      console.log(data);
-      userId = data.id;
-    });
-  }
-  getUser();
+  
   var searchBtn = $("#searchblogsBtn");
   console.log(searchBtn);
   // dynamically creating click events for the edit and delete buttons
@@ -93,7 +87,15 @@ $(document).ready(function () {
       }
     });
   }
-
+  function getUser() {
+    $.get("/api/userdata").then(function (data) {
+      console.log(data);
+      userId = data.id;
+      authorId = userId;
+    });
+  }
+  getUser();
+  
   // This function does an API call to delete blogs
   function deletePost(id) {
     $.ajax({
