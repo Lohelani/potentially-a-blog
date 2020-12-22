@@ -18,13 +18,15 @@ module.exports = function(app) {
   });
 
 
-  app.get("/api/posts/:id", function(req, res) {
+  app.get("/api/posts/:authorId", function(req, res) {
 
-    db.Post.findOne({
-      where: {
-        id: req.params.id
-      },
-      include: [db.Author]
+    db.Post.findAll({
+      include: {
+        model:db.Author,
+        where: {
+          id: req.params.authorId
+        }
+      }
     }).then(function(dbPost) {
       res.json(dbPost);
     });

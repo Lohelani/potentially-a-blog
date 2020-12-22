@@ -40,8 +40,8 @@ module.exports = function(app) {
       username: req.body.username,
       password: req.body.password
     })
-      .then(function() {
-        console.log(req.user);
+      .then(function(dbRes) {
+        res.json(dbRes);
         //res.redirect(307, "/api/login");
       })
       .catch(function(err) {

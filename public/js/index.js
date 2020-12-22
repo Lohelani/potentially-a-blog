@@ -16,6 +16,7 @@ $(document).ready(function () {
   // Variable to hold our blogs
   var blogs;
 
+
   $("#blogNav").on("click", function () {
     var signinData = {
       username: userInput.val(),
@@ -156,6 +157,52 @@ $(document).ready(function () {
     messageH2.html("No blogs have been created yet");
     blogContainer.append(messageH2);
   }
+
+  //testing adding blogs
+
+  $.get("/api/posts", function(data){
+    console.log(data)
+    data.forEach((e,i) => {
+      $("#blogContainer").append(`
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <p>${e.title}</p>
+            </div>
+            <div class="col-md">
+              <p>${e.Author.username}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <p>${e.body}</p>
+          </div>
+        
+        </div>
+      `)
+    });
+
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 
