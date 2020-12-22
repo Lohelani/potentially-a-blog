@@ -12,9 +12,10 @@ $(document).ready(function () {
   // dynamically creating click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
+  var passwordInput = $("#registerPassword");
+  var usernameInput = $("#registerUsername");
   var userInput = $("#userInput");
   // Variable to hold our blogs
-
   function getUser() {
     $.get("/api/userdata").then(function (data) {
       console.log(data);
@@ -22,19 +23,8 @@ $(document).ready(function () {
     });
   }
   getUser();
-
   var blogs;
 
-  // $("#blogNav").on("click", function () {
-  //   var signinData = {
-  //     username: userInput.val(),
-  //   };
-  //   if (isNaN(signinData.username)) {
-  //     window.location.replace("/login");
-  //   } else {
-  //     window.location.replace("/createblog");
-  //   }
-  // });
 
   function createNewRow(post) {
     var formattedDate = new Date(post.createdAt).toLocaleDateString();
@@ -74,7 +64,6 @@ $(document).ready(function () {
     newPostCard.data("post", post);
     return newPostCard;
   }
-
   // The code below handles the case where we want to get blogs for a specific author
   // Looks for a query param in the url for author_id
   var url = window.location.search;
@@ -87,7 +76,6 @@ $(document).ready(function () {
   else {
     getblogs();
   }
-
   // This function grabs blogs from the database and updates the view
   function getblogs(author) {
     authorId = author || "";
@@ -105,7 +93,6 @@ $(document).ready(function () {
       }
     });
   }
-
   // This function does an API call to delete blogs
   function deletePost(id) {
     $.ajax({
@@ -116,13 +103,8 @@ $(document).ready(function () {
         getblogs(blogCategory.val());
       });
   }
-
   // InitializeRows handles appending all of our constructed post HTML inside blogContainer
-
-
   // This function constructs a post's HTML
-
-
   function initializeRows() {
     blogContainer.empty();
     var blogsToAdd = [];
@@ -131,7 +113,6 @@ $(document).ready(function () {
     }
     blogContainer.append(blogsToAdd);
   }
-
   // This function figures out which post we want to delete and then calls deletePost
   function handlePostDelete() {
     var currentPost = $(this)
@@ -140,7 +121,6 @@ $(document).ready(function () {
       .data("post");
     deletePost(currentPost.id);
   }
-
   // This function figures out which post we want to edit and takes it to the appropriate url
   function handlePostEdit() {
     var currentPost = $(this)
@@ -149,7 +129,6 @@ $(document).ready(function () {
       .data("post");
     window.location.href = "/cms?post_id=" + currentPost.id;
   }
-
   // This function displays a message when there are no blogs
   function displayEmpty(id) {
     var query = window.location.search;
@@ -165,56 +144,46 @@ $(document).ready(function () {
     messageH2.html("No blogs have been created yet");
     blogContainer.append(messageH2);
   }
-
   //testing adding blogs
-
   $.get("/api/posts", function(data){
     console.log(data)
     data.forEach((e,i) => {
-      $("#blogContainer").append(`
-        <div class="container">
-          <div class="row">
-            <div class="col-md">
-              <p>${e.title}</p>
-            </div>
-            <div class="col-md">
-              <p>${e.Author.username}</p>
-            </div>
+      var container = $("#blogContainer");
+      for(var i=0;i < data.length; i++){
+        container.append(`<div class="containerAppend">
+        <div class="row">
+          <div class="col-md">
+            <h1 class="headerTitle">${e.title}</h1>
           </div>
-
-          <div class="row">
-            <p>${e.body}</p>
+          <div class="col-md">
+            <p>${e.Author.username}</p>
           </div>
-        
         </div>
-      `)
+        <div class="row">
+          <h4>${e.body}</h4>
+        </div>
+      </div>
+      <hr>
+`)
+      }
+      // $("#blogContainer").append(`
+      //   <div class="containerAppend">
+      //     <div class="row">
+      //       <div class="col-md">
+      //         <h1 class="headerTitle">${e.title}</h1>
+      //       </div>
+      //       <div class="col-md">
+      //         <p>${e.Author.username}</p>
+      //       </div>
+      //     </div>
+      //     <div class="row">
+      //       <h4>${e.body}</h4>
+      //     </div>
+      //   </div>
+      // `)
     });
-
-
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
 // Dropdown menu js - On click drop down function
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -233,4 +202,3 @@ window.onclick = function (event) {
     }
   }
 };
-
