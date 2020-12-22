@@ -15,6 +15,15 @@ $(document).ready(function () {
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
   // Variable to hold our blogs
+
+  function getUser() {
+    $.get("/api/userdata").then(function (data) {
+      console.log(data);
+      userId = data.id;
+    });
+  }
+  getUser();
+
   var blogs;
 
   function createNewRow(post) {
