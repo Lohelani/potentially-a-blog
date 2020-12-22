@@ -28,7 +28,7 @@ $(document).ready(function () {
                 <button class="delete" data-id="${e.id}">delete</button>
             </div>
             <div class="row">
-                <button class="edit" data-id="${e.id}">delete</button>
+                <button class="edit" data-id="${e.id}">edit</button>
             </div>
 
             </div>
@@ -46,7 +46,15 @@ $(document).ready(function () {
                     window.location.replace("/userblog");
 
                 });
-            })
+            });
+
+            $(".edit").on("click", function () {
+                var id = $(this).attr("data-id")
+                console.log(id)
+        
+                localStorage.setItem("postId",id)
+                window.location.replace("/createblog");
+            });
         });
     });
 
