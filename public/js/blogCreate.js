@@ -1,9 +1,13 @@
 $(document).ready(function () {
   var titleInput = $("#titleInput");
   var bodyInput = $("#textInput");
+
+  var userId;
+
   function getUser() {
     $.get("/api/userdata").then(function (data) {
       console.log(data);
+      userId = data.id;
     });
   }
   getUser();
@@ -11,36 +15,22 @@ $(document).ready(function () {
   $("#postBtn").on("click", function (event) {
     event.preventDefault();
     // get userid from localstorage
-    var blogData = {
+
+    var blogData = JSON.stringify({
       title: titleInput.val().trim(),
       body: bodyInput.val().trim(),
-      //author: //use userid here
-    };
-<<<<<<< HEAD
-    console.log(blogData);
-
-=======
+      AuthorId: "" + userId
+    });
     console.log("Blog Data : " +blogData);
->>>>>>> 23a6094c5a5cdddb2e5afa37fcaced0c2718f387
     if (!blogData.body || !blogData.title) {
       return;
     }
 
-    $.post("/api/createblog", blogData).then(function(){
+    $.post("/api/createblog", blogData, function(){
       bodyInput.val("");
       titleInput.val("");
       window.location.replace("/viewblogs");
     });
 
-<<<<<<< HEAD
-  function blogCreate(blogData) {
-    $.post("/api/createblog", blogData, function () {
-      window.location.href = "/viewblogs";
-    });
-  }
-
-
-=======
   });
->>>>>>> 23a6094c5a5cdddb2e5afa37fcaced0c2718f387
 });

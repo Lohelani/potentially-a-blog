@@ -31,7 +31,8 @@ module.exports = function(app) {
   app.post("/api/createblog", function(req, res) {
     db.Post.create({
       title: req.body.title,
-      body: req.body.body
+      body: req.body.body,
+      AuthorId: req.body.AuthorId
     }).then(function(){
       res.redirect(307, "/").catch(function(err){
         res.status(401).json(err);
