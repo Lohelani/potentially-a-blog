@@ -1,4 +1,4 @@
-.homeBody {
+.homeBody, .personalBody {
     background-image: url("https://img.pngio.com/fully-simple-wrinkled-paper-background-paper-wrinkle-background-wrinkled-paper-png-640_856.png");
 }
 
@@ -16,10 +16,6 @@
 
 }
 
-.personalBody{
-    background-image: url("https://cutewallpaper.org/21/artsy-backrounds/Beautiful-in-2019-Artsy-wallpaper-iphone-Abstract-.jpg");
-
-}
 
 .navbar {
     background-color: rgb(4, 4, 46);
@@ -48,6 +44,15 @@ hr {
     margin-top: 20px;
 }
 
+.gifContainer {
+    display: flex;
+    float: right;
+    padding: 20px;
+    width: 400px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
 header {
     color: white;
     font-size: 30px;
@@ -59,10 +64,13 @@ header {
 .containerBlog, .userblogContainer {
     display: flex;
     float: left;
-    background-color: rgb(72, 106, 63);
     margin-left: 20px;
     margin-top: 20px;
     width: 975px;
+}
+
+.userblogContainer {
+    background-color: rgb(201, 193, 201);
 }
 
 .signupContainer {
@@ -167,6 +175,16 @@ textarea{
     width: 200px;
     font-family: 'Cabin', sans-serif;
     background-color: rgb(6, 6, 61);
+}
+
+.delete {
+    background-color: rgb(6, 6, 61);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+.deleteBtn:hover{
+    background-color: green;
 }
 
 #postBtn:hover{
@@ -291,3 +309,43 @@ h2{
       border-color: rgb(2, 2, 50);
       margin-top:4px;
   }
+
+  .containerAppend {
+      background-color: rgb(201, 193, 201);
+      padding: 10px;
+       border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  }
+
+  #blogContainer {
+      display: block;
+      float: left;
+      width: 800px;
+      margin-left: 120px;
+      padding-left: 50px;
+      border: 1px solid;
+      padding: 10px;
+      box-shadow: 5px 10px;
+  }
+  
+  h1, p{
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+hr {
+    color: rgb(4, 4, 43);
+}
+
+p{
+    display: block;
+    float: right;
+}
+
+.member-name, .userblogHeader{
+    color: black;
+    font-size: 40px;
+    margin-left: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
