@@ -6,9 +6,7 @@ $(document).ready(function () {
         $(".member-name").text(data.username);
         userId = data.id;
     }).then(function () {
-        console.log(userId)
         $.get("/api/posts/" + userId, function (data) {
-            console.log(data)
             data.forEach(function (e) {
                 $("#blogContainer").append(`
             <div class="container">
@@ -37,7 +35,6 @@ $(document).ready(function () {
 
             $(".delete").on("click", function () {
                 var id = $(this).attr("data-id")
-                console.log(id)
         
                 $.ajax({
                     method: "DELETE",
@@ -50,7 +47,6 @@ $(document).ready(function () {
 
             $(".edit").on("click", function () {
                 var id = $(this).attr("data-id")
-                console.log(id)
         
                 localStorage.setItem("postId",id)
                 window.location.replace("/createblog");

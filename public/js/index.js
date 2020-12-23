@@ -5,10 +5,8 @@ $(document).ready(function () {
   var blogCategory = $("#category");
   //input value where user searches for a keyword of a blog if exists in database
   var searchBlogs = $("#searchBlogs");
-  console.log(searchBlogs);
   //submit button to search
   var searchBtn = $("#searchblogsBtn");
-  console.log(searchBtn);
   // dynamically creating click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
@@ -18,7 +16,6 @@ $(document).ready(function () {
   // Variable to hold our blogs
   function getUser() {
     $.get("/api/userdata").then(function (data) {
-      console.log(data);
       userId = data.id;
     });
   }
@@ -83,7 +80,6 @@ $(document).ready(function () {
       authorId = "/?author_id=" + authorId;
     }
     $.get("/api/blogs" + authorId, function (data) {
-      console.log("blogs", data);
       blogs = data;
       if (!blogs || !blogs.length) {
         displayEmpty(author);
@@ -132,9 +128,7 @@ $(document).ready(function () {
   // This function displays a message when there are no blogs
   function displayEmpty(id) {
     var query = window.location.search;
-    console.log(query);
     var partial = "";
-    console.log(partial);
     if (id) {
       partial = " for Author #" + id;
     }
@@ -146,7 +140,6 @@ $(document).ready(function () {
   }
   //testing adding blogs
   $.get("/api/posts", function(data){
-    console.log(data)
     data.forEach((e,i) => {
       var container = $("#blogContainer");
       // for(var i=0 ;i < data.length; i++){
@@ -188,7 +181,6 @@ $(document).ready(function () {
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
-console.log(myFunction);
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {

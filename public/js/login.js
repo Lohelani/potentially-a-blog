@@ -11,7 +11,6 @@ $(document).ready(function () {
       password: passwordInput.val().trim()
       //userid
     };
-    console.log(userData);
 
     if (!userData.username || !userData.password) {
       return;

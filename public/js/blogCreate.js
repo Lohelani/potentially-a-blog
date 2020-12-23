@@ -8,7 +8,6 @@ $(document).ready(function () {
 
   function getUser() {
     $.get("/api/userdata").then(function (data) {
-      console.log(data);
       userId = data.id;
     }).then(function () {
       loadBlog();
@@ -17,11 +16,11 @@ $(document).ready(function () {
   getUser();
   // When the post button is clicked, validate that the title and body are not blank
   $("#postBtn").on("click", function (event) {
-    if (editPost == true) {
+
+    if (editPost==true) {
       editPost = false;
-      console.log("editPost");
-      console.log(titleInput.val().trim());
-      console.log(bodyInput.val().trim());
+      // console.log(titleInput.val().trim());
+      // console.log(bodyInput.val().trim());
 
 
       $.ajax({
@@ -43,7 +42,6 @@ $(document).ready(function () {
         body: bodyInput.val().trim(),
         AuthorId: "" + userId
       };
-      console.log("Blog Data : " + blogData);
       if (!blogData.body || !blogData.title) {
         return;
       }
@@ -60,11 +58,10 @@ $(document).ready(function () {
     postId = localStorage.getItem("postId");
     localStorage.setItem("postId", null);
 
-    if (postId !== null) {
+    if (postId != "null") {
       editPost = true;
 
       $.get("/api/specific-post/" + postId, function (data) {
-        console.log(data);
         $("#titleInput").val(data.title);
         $("#textInput").val(data.body);
       });
