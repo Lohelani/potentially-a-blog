@@ -17,7 +17,7 @@ $(document).ready(function () {
   // When the post button is clicked, validate that the title and body are not blank
   $("#postBtn").on("click", function (event) {
 
-    if (editPost==true) {
+    if (editPost ===true) {
       editPost = false;
       // console.log(titleInput.val().trim());
       // console.log(bodyInput.val().trim());
@@ -58,7 +58,7 @@ $(document).ready(function () {
     postId = localStorage.getItem("postId");
     localStorage.setItem("postId", null);
 
-    if (postId != "null") {
+    if (postId !== "null") {
       editPost = true;
 
       $.get("/api/specific-post/" + postId, function (data) {
