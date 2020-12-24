@@ -40,7 +40,6 @@ module.exports = function(app) {
 
   app.post("/api/createblog", function(req, res) {
 
-    console.log(req.body);
 
     db.Post.create({
       title: req.body.title,
