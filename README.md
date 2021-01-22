@@ -20,7 +20,7 @@ We wanted to create a blogging application where we could use passwords and sign
 
 # Heroku Link to Deployed Application:
 
- https://tranquil-savannah-13949.herokuapp.com/
+https://whispering-stream-30896.herokuapp.com/
 
  # Link to Github Repository:
 
